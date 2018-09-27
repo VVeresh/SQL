@@ -5,6 +5,11 @@
 # The diet table has columns (species, food) for each food that a species eats.
 #
 
+# NEW:
 QUERY = '''
 select name from animals, diet where animals.species = diet.species and food = 'fish'
+'''
+# OLD:
+QUERY = '''
+select name from animals join diet on animals.species = diet.species where food = 'fish'
 '''
